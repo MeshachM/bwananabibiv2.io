@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bwana & Bibi Wedding</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --blush: #f8e1e4;
+            --sage: #d4e8d7;
+            --ivory: #fffff0;
+            --gold: #d4af37;
+            --dark-gold: #b8860b;
+            --text: #333;
+            --light-text: #666;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            background-color: var(--ivory);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        .cursive {
+            font-family: 'Great Vibes', cursive;
+        }
+
+        section {
+            padding: 80px 20px;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: var(--gold);
+            margin: 20px auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--gold);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn:hover {
+            background: var(--dark-gold);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            min-height: 600px;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                        url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+            animation: fadeInUp 1.5s ease;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero h2 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero .btn {
+            margin-top: 20px;
+        }
+        /* Share Photos */
+          .share-photos {
+            background-color: white;
+        }
+        
+        /* Our Story */
+        .our-story {
+            background-color: white;
+        }
+
+        .story-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .story-image, .story-text {
+            flex: 1 1 45%;
+            min-width: 300px;
+            padding: 20px;
+        }
+
+        .story-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s ease;
+        }
+
+        .story-image:hover img {
+            transform: scale(1.02);
+        }
+
+        .story-text h3 {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .story-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: var(--light-text);
+        }
+
+        /* Wedding Details */
+        .wedding-details {
+            background-color: var(--blush);
+        }
+
+        .details-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .detail-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .detail-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .detail-card i {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .detail-card h3 {
+            margin-bottom: 15px;
+            color: var(--gold);
+        }
+
+        .map-container {
+            grid-column: 1 / -1;
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Event Schedule */
+        .event-schedule {
+            background-color: white;
+        }
+
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            padding: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: var(--gold);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+        }
+
+        .timeline-item {
+            padding: 20px 40px;
+            position: relative;
+            width: 50%;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .timeline-item.visible {
+            opacity: 1;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-content {
+            padding: 20px;
+            background-color: var(--blush);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .timeline-content::after {
+            content: '';
+            position: absolute;
+            border-style: solid;
+            width: 0;
+            height: 0;
+            top: 20px;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::after {
+            right: -15px;
+            border-width: 15px 0 15px 15px;
+            border-color: transparent transparent transparent var(--blush);
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::after {
+            left: -15px;
+            border-width: 15px 15px 15px 0;
+            border-color: transparent var(--blush) transparent transparent;
+        }
+
+        .timeline-icon {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background-color: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            box-shadow: 0 0 0 5px white;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-icon {
+            right: -20px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-icon {
+            left: -20px;
+        }
+
+        .timeline-content h3 {
+            margin-bottom: 10px;
+            color: var(--gold);
+        }
+
+        .timeline-content p {
+            color: var(--light-text);
+        }
+
+        /* Gallery */
+        .gallery {
+            background-color: var(--sage);
+        }
+
+        .gallery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            aspect-ratio: 1 / 1;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .wedding-hashtag {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2rem;
+            margin: 20px 0;
+            color: var(--gold);
+        }
+
+        .copyright {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transition: opacity 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero h2 {
+                font-size: 1.3rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .timeline::before {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-icon,
+            .timeline-item:nth-child(even) .timeline-icon {
+                left: 10px;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-content::after,
+            .timeline-item:nth-child(even) .timeline-content::after {
+                left: -15px;
+                border-width: 15px 15px 15px 0;
+                border-color: transparent var(--blush) transparent transparent;
+            }
+
+            .rsvp-container {
+                padding: 20px;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="cursive">Bwana & Bibi</h1>
+            <h2> We Are Delighted To Have You Join Us In Celebrating The Love And Union Of Bwana na Bibi.</h2>
+            <h2> Your Presence Makes This Day Truly Special.</h2>
+            <h2>You Are Warmly Welcome!!</h2>
+            <a href="#our-story" class="btn">Explore Our Story</a>
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section id="our-story" class="our-story fade-in">
+        <div class="section-title">
+            <h2>Our Story</h2>
+        </div>
+        <div class="story-container">
+            <div class="story-image">
+                <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Sarah and James">
+            </div>
+            <div class="story-text">
+                <h3>How We Met</h3>
+                <p>We first met at a wedding party in Dar es Salaam when she smiled at me while I was in the food queue,we chatted a little and exchanged phone number.</p>
+                <p>Each time we saw each other in dates, our eyes spoke more than words ever could.Eventually, I gathered the courage to express my feelings — and today, she’s my beloved wife, Bibi.</p>
+                <p>Now, they're excited to celebrate their love surrounded by family and friends in this beautiful Night.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wedding Details -->
+    <section id="wedding-details" class="wedding-details fade-in">
+        <div class="section-title">
+            <h2>Wedding Details</h2>
+        </div>
+        <div class="details-container">
+            <div class="detail-card">
+                <i class="fas fa-calendar-alt"></i>
+                <h3>Date & Time</h3>
+                <p>July 12, 2025</p>
+                <p>Ceremony Start at 6:00 PM</p>
+            </div>
+            <div class="detail-card">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Venue</h3>
+                <p>City Hall, Masaki</p>
+                <p>Kinondoni, Dar es Salaam</p>
+            </div>
+            <div class="detail-card">
+                <i class="fas fa-tshirt"></i>
+                <h3>Dress Code</h3>
+                <p>Black Tie Optional</p>
+                <p>Cocktail Attire Welcome</p>
+            </div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2788.654270822012!2d9.21339731556693!3d45.95975397910557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786b8a7e1e1c8a5%3A0x1f5a1b5b5b5b5b5b!2sVilla%20del%20Balbianello!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Schedule -->
+    <section id="event-schedule" class="event-schedule fade-in">
+        <div class="section-title">
+            <h2>Event Schedule</h2>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Guests Arrival And Photoshoots</h3>
+                    <p>6:30 PM - 7.30 PM</p>
+                    <p>Join us as we exchange vows in the beautiful venue of City Hall Masaki.</p>
+                </div>
+                <div class="timeline-icon">
+                    <i class="fas fa-ring"></i>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Other Party Events</h3>
+                    <p>7:30 PM - 10:30 PM</p>
+                    <p>Enjoy nice drinks,bites and other party activities with our vibrant MCs,DJ and other guests.</p>
+                </div>
+                <div class="timeline-icon">
+                    <i class="fas fa-glass-cheers"></i>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Dinner Reception</h3>
+                    <p>10:30 PM - 11:30 PM</p>
+                    <p>A gourmet three-course meal featuring traditional Swahili dishes.</p>
+                </div>
+                <div class="timeline-icon">
+                    <i class="fas fa-utensils"></i>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Dance Party</h3>
+                    <p>11:30 PM - 12:30 AM</p>
+                    <p>Let's celebrate with music, dancing, and lots of love!</p>
+                </div>
+                <div class="timeline-icon">
+                    <i class="fas fa-music"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="gallery fade-in">
+        <div class="section-title">
+            <h2>Gallery</h2>
+        </div>
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Engagement photo">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1518895949257-7621c3c786d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Couple photo">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Proposal photo">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Couple photo">
+            </div>
+        </div>
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <a href="https://photos.app.goo.gl/geRrRqiGUD1Wv6qV9" class="btn">Share Photos</a>
+            </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="fade-in">
+        <div class="wedding-hashtag">#BwanaNaBibi2025</div>
+        <p>Welcome and Celebrate With Us!</p>
+        <div class="copyright">
+            <p>&copy; 2025 Bwana & Bibi Wedding. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+      
+        // Scroll animations
+        function checkVisibility() {
+            const elements = document.querySelectorAll('.fade-in');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('visible');
+                }
+            });
+
+            // Timeline items
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            const timelineHeight = document.querySelector('.timeline').getBoundingClientRect().top;
+            
+            timelineItems.forEach((item, index) => {
+                const itemTop = item.getBoundingClientRect().top;
+                
+                if (itemTop < window.innerHeight - 100) {
+                    setTimeout(() => {
+                        item.classList.add('visible');
+                    }, index * 200);
+                }
+            });
+        }
+
+        // Check visibility on load and scroll
+        window.addEventListener('load', checkVisibility);
+        window.addEventListener('scroll', checkVisibility);
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
